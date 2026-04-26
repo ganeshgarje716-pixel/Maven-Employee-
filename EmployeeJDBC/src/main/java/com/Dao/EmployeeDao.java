@@ -49,14 +49,19 @@ public class EmployeeDao {
 			pst.setString(5, employee.getGender());
 			pst.setString(6, employee.getCity());
 			
-			pst.executeUpdate();
+			int value = pst.executeUpdate();
+			
+			if (value > 0) {
+				
+				return "Employee Inserted Successfully";
+			}
 		} 
 		catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
-		return "Employee Inserted Successfully";
+		return null;
 	}
 	
 	
@@ -74,14 +79,19 @@ public class EmployeeDao {
 			pst.setString(5, employee.getCity());
 			pst.setInt(6, employee.getId());
 			
-			pst.executeUpdate();
+			int value = pst.executeUpdate();
+			
+			if (value > 0) {
+				
+				return "Employee Update Successfully";
+			}
 		} 
 		catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
-		return "Employee Update Successfully";
+		return null;
 	}
 	
 	
@@ -94,14 +104,19 @@ public class EmployeeDao {
 			
 			pst.setInt(1, id);
 			
-			pst.executeUpdate();
+			int value = pst.executeUpdate();
+			
+			if (value > 0) {
+				
+				return "Employee delete Successfully";
+			}
 		} 
 		catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
-		return "Employee delete Successfully";
+		return null;
 	}
 	
 	
