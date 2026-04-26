@@ -21,7 +21,7 @@ public class JDBCUtil {
 		Connection con=null;
 		try {
 			
-			Class.forName("com.mysql.cj.jdbc.DSriver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			 con = DriverManager.getConnection(url, username, password);
 		} 
